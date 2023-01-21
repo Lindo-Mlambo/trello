@@ -11,20 +11,21 @@ class Draggable extends HTMLElement {
     console.log("setting up Draggable...");
 
     const container = createElement("div", "");
-    container.style.width = "100%";
     container.appendChild(this.addSlot("draggable-child"));
     const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.appendChild(container);
+    this.setAttribute("draggable", true);
 
     this.setupDragEvents();
   }
 
   setupDragEvents() {
-    this.onDragStart = (evt) => this.handleDragStart(evt);
+    this.ondragstart = (evt) => this.handleDragStart(evt);
     this.ondragend = (evt) => this.handleDragEnd(evt);
   }
 
   handleDragStart(evt) {
+    console.log("drag started");
     this.customDragStart(evt);
   }
 
