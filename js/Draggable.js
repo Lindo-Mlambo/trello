@@ -1,15 +1,13 @@
 class Draggable extends HTMLElement {
+  static count = 0;
   constructor() {
     super();
+    this.setAttribute("data-sys-gen-id", `draggable-${Draggable.count++}`);
+    this.dropzone = false;
     this.setup();
-    this.customDragStart = () => {
-      console.log("setup custom ondragstart to handle drag event");
-    };
   }
 
   setup() {
-    console.log("setting up Draggable...");
-
     const container = createElement("div", "");
     container.appendChild(this.addSlot("draggable-child"));
     const shadowRoot = this.attachShadow({ mode: "open" });
@@ -22,14 +20,14 @@ class Draggable extends HTMLElement {
   setupDragEvents() {
     this.ondragstart = (evt) => this.handleDragStart(evt);
     this.ondragend = (evt) => this.handleDragEnd(evt);
+    this.ondrop = (evt) => evt.preventDefault();
   }
 
   handleDragStart(evt) {
-    console.log("drag started");
-    this.customDragStart(evt);
+    evt.dataTransfer.setData("drag-item", evt.target.dataset.sysGenId);
   }
 
   handleDragEnd(evt) {
-    console.log("drag item dropped...");
+    // console.log("drag item dropped...");
   }
 }

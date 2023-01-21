@@ -1,14 +1,12 @@
 class Dropzone extends HTMLElement {
+  static count = 0;
   constructor() {
     super();
+    this.setAttribute("data-sys-gen-id", `dropzone-${Draggable.count++}`);
     this.setup();
-    this.customDrop = () => {
-      console.log("setup custom drop to handle drop event");
-    };
   }
 
   setup() {
-    console.log("setting up Dropzone...");
     const container = createElement("div", "");
     container.style.width = "100%";
     container.style.display = "flex";
@@ -37,8 +35,13 @@ class Dropzone extends HTMLElement {
   }
 
   handleDrop(evt) {
+    console.log(evt);
     evt.preventDefault();
-    this.customDrop(evt);
+    const sysGenId = evt.dataTransfer.getData("drag-item");
+    evt.target.insertBefore(
+      $(`[data-sys-gen-id="${sysGenId}"]`)[0],
+      evt.target.childNodes[0]
+    );
     this.classList.remove("drag-enter");
   }
 }

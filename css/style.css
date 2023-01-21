@@ -1,5 +1,21 @@
+:root {
+  --lane-bg1: #fff;
+  --lane-bg2: rgba(215, 225, 236, .7);
+  --lane-grad-bg: linear-gradient(315deg, var(--lane-bg1) 0%, var(--lane-bg2) 74%);
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: .5em;
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 2em;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 2em;
 }
 
 body {
@@ -7,4 +23,124 @@ body {
   padding: 0em;
   margin: 0em;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  font-family: Outfit, sans-serif;;
+  color: #2f2f2f;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+}
+
+section.nav {
+  display: flex;
+  height: 6em;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+section.content {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 1em;
+  padding: 1em;
+}
+
+dropzone-widget {
+  display: flex;
+  flex-direction: column;  
+  min-width: 320px;
+  border: 1px solid #ccc;
+  border-radius: .5em;
+  padding: 0em;
+  margin: 1em;
+  background-color: var(--lane-bg1);
+  background-image: var(--lane-grad-bg);
+  overflow: hidden;
+  position: relative;
+}
+.lane {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0em;
+  bottom: 0em;
+  left: 0em;
+  right: 0em;
+}
+.lane-title {
+  display: flex;
+  justify-content: center;
+  padding: .5em;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,.2);
+}
+.lane-title h4 {
+  margin: 0em;
+}
+.lane-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 1em;
+}
+draggable-widget {
+  width: 100%;
+}
+.ticket {
+  display: flex;
+  flex-direction: column;
+  border-radius: .5em;
+  background-color: #fff;
+  padding: 1em;
+}
+
+section.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8em;
+  color: #aaa;
+  background-color: none;
+  padding: 1em;
+}
+section.footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+section.footer a {
+  margin: 0px 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #222;
+  border-radius: 4px;
+  padding: 0px 4px;
+  font-size: .8rem;
+  font-weight: 100;
+  transition: background-color .5s ease;
+}
+section.footer a:hover {
+  background-color: #444;
+}
+
+.drag-enter {
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, .1);
 }

@@ -22,3 +22,4 @@ For now, the content is not dynamic, maybe later, I would add forms to let users
 # Helpful sources
 
 - [Egg Gradients](https://www.eggradients.com/)
+- [W3Schools: HTML Drag and Drop API](https://www.w3schools.com/html/html5_draganddrop.asp)

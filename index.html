@@ -5,12 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trello (Mock up)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/utils.js" defer></script>
+    <script src="js/Draggable.js" defer></script>
+    <script src="js/Dropzone.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
     <main>
-      <h1>Goodbye world!</h1>
+      <section class="nav">
+        <h4>It's not dynamic yet, just try the drag and drop for now.</h4>
+      </section>
+      <section class="content">
+        <dropzone-widget>
+          <div class="lane" slot="dropzone-child">
+            <div class="lane-title"><h4>Todo</h4></div>
+            <div class="lane-body">
+              <draggable-widget>
+                <div class="ticket" slot="draggable-child">
+                  <div class="ticket-body">
+                    <span
+                      >Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.</span
+                    >
+                  </div>
+                  <div class="ticket-footer"></div>
+                </div>
+              </draggable-widget>
+              <draggable-widget>
+                <div class="ticket" slot="draggable-child">
+                  <div class="ticket-body">
+                    <span
+                      >Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.</span
+                    >
+                  </div>
+                  <div class="ticket-footer"></div>
+                </div>
+              </draggable-widget>
+              <draggable-widget>
+                <div class="ticket" slot="draggable-child">
+                  <div class="ticket-body">
+                    <span
+                      >Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.</span
+                    >
+                  </div>
+                  <div class="ticket-footer"></div>
+                </div>
+              </draggable-widget>
+            </div>
+          </div>
+        </dropzone-widget>
+        <dropzone-widget>
+          <div class="lane" slot="dropzone-child">
+            <div class="lane-title"><h4>In Progress</h4></div>
+            <div class="lane-body"></div>
+          </div>
+        </dropzone-widget>
+        <dropzone-widget>
+          <div class="lane" slot="dropzone-child">
+            <div class="lane-title"><h4>Done</h4></div>
+            <div class="lane-body"></div>
+          </div>
+        </dropzone-widget>
+      </section>
+      <section class="footer">
+        <div>
+          <div>
+            <a target="_blank" href="https://github.com/Lindo-Mlambo/trello.git"
+              ><i class="fa fa-github"></i> | Source code</a
+            >
+            <a target="_blank" href="https://www.twitter.com/Lamboughs"
+              ><i class="fa fa-twitter"></i> | Twitter</a
+            >
+          </div>
+          <i>
+            &copy; 2022. Built with&nbsp;
+            <span class="fa fa-heart" style="color: #e99ba6"></span> &nbsp;by
+            Lindo Mlambo
+          </i>
+        </div>
+      </section>
     </main>
   </body>
 </html>
