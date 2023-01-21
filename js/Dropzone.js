@@ -10,7 +10,9 @@ class Dropzone extends HTMLElement {
   setup() {
     console.log("setting up Dropzone...");
     const container = createElement("div", "");
-    container.appendChild(this.addSlot("dropzone-item"));
+    container.style.width = "100%";
+    container.style.display = "flex";
+    container.appendChild(this.addSlot("dropzone-child"));
     const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.appendChild(container);
 

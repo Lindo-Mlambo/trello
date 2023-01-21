@@ -11,7 +11,8 @@ class Draggable extends HTMLElement {
     console.log("setting up Draggable...");
 
     const container = createElement("div", "");
-    container.appendChild(this.addSlot("draggable-item"));
+    container.style.width = "100%";
+    container.appendChild(this.addSlot("draggable-child"));
     const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.appendChild(container);
 
