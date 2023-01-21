@@ -2,6 +2,8 @@
 
 Mock up? I want to demonstrate the use of custom elements to encapsulate the drag and drop functionality. Again, this is more of a show off to my friends than anything 😂. Vanilla JS is the way!
 
+[View project here](https://lindo-mlambo.github.io/trello/)
+
 ## My Process
 
 ### Built with
