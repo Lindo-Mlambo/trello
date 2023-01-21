@@ -9,6 +9,12 @@ class Dropzone extends HTMLElement {
 
   setup() {
     console.log("setting up Dropzone...");
+    const container = createElement("div", "");
+    container.appendChild(this.addSlot("dropzone-item"));
+    const shadowRoot = this.attachShadow({ mode: "open" });
+    shadowRoot.appendChild(container);
+
+    this.setupDragEvents();
   }
 
   setupDragEvents() {
