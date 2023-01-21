@@ -35,12 +35,19 @@ class Dropzone extends HTMLElement {
   }
 
   handleDrop(evt) {
-    console.log(evt);
     evt.preventDefault();
     const sysGenId = evt.dataTransfer.getData("drag-item");
-    evt.target.insertBefore(
+    let dropTarget = evt.target;
+    if (!dropTarget.classList.contains("drop-target")) {
+      const targetParent = evt.target.closest("dropzone-widget");
+      dropTarget = $(
+        `[data-sys-gen-id="${targetParent.dataset.sysGenId}"] .drop-target`
+      )[0];
+    }
+
+    dropTarget.insertBefore(
       $(`[data-sys-gen-id="${sysGenId}"]`)[0],
-      evt.target.childNodes[0]
+      dropTarget.childNodes[0]
     );
     this.classList.remove("drag-enter");
   }
